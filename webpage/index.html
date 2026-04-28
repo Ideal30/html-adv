@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto Sallon</title>
+
+<style>
+body{
+	margin:0;
+	font-family:'Segoe UI', sans-serif;
+	background:#0f172a;
+	color:white;
+}
+
+/* HEADER */
+header{
+	display:flex;
+	justify-content:space-between;
+	padding:20px 40px;
+	background:#020617;
+}
+
+header a{
+	color:white;
+	text-decoration:none;
+	margin-left:15px;
+}
+
+header a:hover{
+	color:#22c55e;
+}
+
+/* TITLE */
+h2{
+	text-align:center;
+	margin-top:30px;
+	font-size:30px;
+}
+
+/* GRID */
+.cars-grid{
+	display:grid;
+	grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+	gap:25px;
+	padding:40px;
+}
+
+/* CARD */
+.car-card{
+	background:#020617;
+	border-radius:15px;
+	overflow:hidden;
+	box-shadow:0 5px 20px rgba(0,0,0,0.4);
+	transition:0.3s;
+	position:relative;
+}
+
+.car-card:hover{
+	transform:translateY(-8px) scale(1.02);
+}
+
+/* IMAGE */
+.car-card img{
+	width:100%;
+	height:180px;
+	object-fit:cover;
+}
+
+/* CONTENT */
+.car-info{
+	padding:15px;
+}
+
+.car-info h3{
+	margin:0;
+	font-size:18px;
+}
+
+/* PRICE */
+.price{
+	color:#22c55e;
+	font-weight:bold;
+	margin-top:5px;
+}
+
+/* BUTTON */
+.car-card a{
+	display:block;
+	margin-top:10px;
+	padding:10px;
+	text-align:center;
+	background:#22c55e;
+	color:black;
+	border-radius:8px;
+	text-decoration:none;
+	font-weight:bold;
+	transition:0.3s;
+}
+
+.car-card a:hover{
+	background:#16a34a;
+}
+
+/* BADGE */
+.badge{
+	position:absolute;
+	top:10px;
+	left:10px;
+	background:#22c55e;
+	color:black;
+	padding:5px 10px;
+	border-radius:20px;
+	font-size:12px;
+	font-weight:bold;
+}
+
+/* FOOTER */
+footer{
+	text-align:center;
+	padding:20px;
+	background:#020617;
+	margin-top:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+	.cars-grid{
+		padding:20px;
+	}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+	<div><strong>Auto Sumea</strong></div>
+	<div>
+		<a href="#">Kryefaqja</a>
+		<a href="#">Rreth Nesh</a>
+		<a href="#">Kontakt</a>
+	</div>
+</header>
+
+<h2>Makina në shitje</h2>
+
+<div class="cars-grid">
+
+	<div class="car-card">
+		<div class="badge">NEW</div>
+		<img src="images/rangerover.jpg.jpg">
+		<div class="car-info">
+			<h3>Range Rover Evoque</h3>
+			<div class="price">21,000 €</div>
+			<a href="rangerover.html">Shiko</a>
+		</div>
+	</div>
+
+	<div class="car-card">
+		<img src="imagesgollf7gtd/gtd.jpg.jpg">
+		<div class="car-info">
+			<h3>VW Golf 7 GTD</h3>
+			<div class="price">18,500 €</div>
+			<a href="gollf7gtd.html">Shiko</a>
+		</div>
+	</div>
+
+	<div class="car-card">
+		<img src="images/car3.jpg">
+		<div class="car-info">
+			<h3>Volkswagen ID.4</h3>
+			<div class="price">29,000 €</div>
+			<a href="#">Shiko</a>
+		</div>
+	</div>
+
+	<div class="car-card">
+		<img src="images/car4.jpg">
+		<div class="car-info">
+			<h3>Mustang Mach-E</h3>
+			<div class="price">34,000 €</div>
+			<a href="#">Shiko</a>
+		</div>
+	</div>
+
+	<div class="car-card">
+		<img src="images/car5.jpg">
+		<div class="car-info">
+			<h3>Nissan Leaf</h3>
+			<div class="price">15,000 €</div>
+			<a href="#">Shiko</a>
+		</div>
+	</div>
+
+</div>
+
+<footer>
+	<p>All rights reserved &copy; Ideal Ahmeti</p>
+</footer>
+
+</body>
+</html>
