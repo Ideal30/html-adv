@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VW Golf 7 GTD</title>
+<title>VW Golf 7 GTD - Auto Sumea</title>
 
 <style>
 body{
 	margin:0;
-	font-family: 'Segoe UI', sans-serif;
+	font-family:'Segoe UI', sans-serif;
 	background:#0f172a;
 	color:white;
 }
 
-/* NAVBAR */
+/* HEADER */
 header{
 	display:flex;
 	justify-content:space-between;
@@ -28,7 +28,6 @@ header a{
 	color:white;
 	text-decoration:none;
 	margin:0 10px;
-	font-weight:500;
 }
 
 header a:hover{
@@ -38,9 +37,9 @@ header a:hover{
 /* HERO */
 .hero{
 	height:70vh;
-	background:url("images-golf7-gtd/gtd.jpg") center/cover no-repeat;
+	background:url("imagesgollf7gtd/gtd.jpg") center/cover no-repeat;
 	display:flex;
-	align-items:end;
+	align-items:flex-end;
 	padding:40px;
 	position:relative;
 }
@@ -54,6 +53,7 @@ header a:hover{
 
 .hero-content{
 	position:relative;
+	z-index:1;
 }
 
 .hero h1{
@@ -94,23 +94,6 @@ header a:hover{
 	transform:scale(1.05);
 }
 
-/* LIGHTBOX */
-.lightbox{
-	position:fixed;
-	inset:0;
-	background:rgba(0,0,0,0.9);
-	display:none;
-	align-items:center;
-	justify-content:center;
-	z-index:2000;
-}
-
-.lightbox img{
-	max-width:90%;
-	max-height:90%;
-	border-radius:10px;
-}
-
 /* DETAILS */
 .details{
 	display:grid;
@@ -139,6 +122,23 @@ td{
 	border-bottom:1px solid #1e293b;
 }
 
+/* LIGHTBOX */
+.lightbox{
+	position:fixed;
+	inset:0;
+	background:rgba(0,0,0,0.9);
+	display:none;
+	align-items:center;
+	justify-content:center;
+	z-index:2000;
+}
+
+.lightbox img{
+	max-width:90%;
+	max-height:90%;
+	border-radius:10px;
+}
+
 /* BUTTON */
 .sticky-btn{
 	position:fixed;
@@ -151,15 +151,18 @@ td{
 	border-radius:50px;
 	font-weight:bold;
 	text-decoration:none;
-	box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
 .sticky-btn:hover{
 	background:#16a34a;
 }
 
-/* RESPONSIVE */
+/* FOOTER RESPONSIVE */
 @media(max-width:768px){
+	.gallery{
+		grid-template-columns:repeat(2,1fr);
+	}
+
 	.details{
 		grid-template-columns:1fr;
 	}
@@ -182,7 +185,6 @@ td{
 	</div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
 	<div class="hero-content">
 		<h1>Volkswagen Golf 7 GTD</h1>
@@ -192,15 +194,13 @@ td{
 
 <div class="container">
 
-	<!-- GALLERY -->
 	<div class="gallery">
-		<img src="imagesgollf7gtd/golf.jpg.jpg" onclick="openImg(this)">
-		<img src="imagesgollf7gtd/back.jpg.jpg" onclick="openImg(this)">
-		<img src="imagesgollf7gtd/side.jpg.jpg" onclick="openImg(this)">
-		<img src="imagesgollf7gtd/interior.jpg.jpg" onclick="openImg(this)">
+		<img src="imagesgollf7gtd/1.jpg" onclick="openImg(this)">
+		<img src="imagesgollf7gtd/2.jpg" onclick="openImg(this)">
+		<img src="imagesgollf7gtd/3.jpg" onclick="openImg(this)">
+		<img src="imagesgollf7gtd/4.jpg" onclick="openImg(this)">
 	</div>
 
-	<!-- DETAILS -->
 	<div class="details">
 
 		<div class="card">
@@ -217,27 +217,27 @@ td{
 			<h3>Përshkrimi</h3>
 			<p>
 			Makinë shumë e ruajtur, pa aksidente, e servisuar rregullisht.
-			Komoditet dhe performancë e lartë.
-			Gati për përdorim.
+			Gati për përdorim dhe në gjendje shumë të mirë.
 			</p>
 		</div>
 
 	</div>
-
 </div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" onclick="this.style.display='none'">
+<div class="lightbox" id="lightbox" onclick="closeImg()">
 	<img id="lightImg">
 </div>
 
-<!-- BUTTON -->
 <a href="contact.html" class="sticky-btn">Kontakto Tani</a>
 
 <script>
 function openImg(img){
 	document.getElementById("lightImg").src = img.src;
-	document.querySelector(".lightbox").style.display = "flex";
+	document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeImg(){
+	document.getElementById("lightbox").style.display = "none";
 }
 </script>
 
