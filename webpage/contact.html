@@ -1,138 +1,215 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kontakt</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontakt | Auto Sallon Sumea</title>
 
-<style>
-body{
-    margin:0;
-    font-family:'Segoe UI', sans-serif;
-    background:#0f172a;
-    color:white;
-}
+    <style>
+        :root {
+            --primary-color: #22c55e;
+            --bg-dark: #0f172a;
+            --card-bg: #020617;
+            --text-white: #ffffff;
+            --input-bg: #0f172a;
+        }
 
-/* CONTACT SECTION */
-.contact-section{
-    max-width:600px;
-    margin:60px auto;
-    padding:30px;
-    background:#020617;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.4);
-    text-align:center;
-}
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
 
-/* TITLE */
-.contact-section h2{
-    margin-bottom:10px;
-}
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--card-bg);
+            border-bottom: 1px solid #1e293b;
+        }
 
-/* PHONE */
-.contact-info{
-    margin-bottom:20px;
-    font-size:14px;
-    color:#94a3b8;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
 
-.contact-info strong{
-    color:#22c55e;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-/* FORM */
-.contact-form{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
+        nav a:hover {
+            color: var(--primary-color);
+        }
 
-/* INPUTS */
-.contact-form input,
-.contact-form textarea{
-    padding:12px;
-    border:none;
-    border-radius:8px;
-    background:#0f172a;
-    color:white;
-    font-size:14px;
-}
+        /* CONTACT CONTAINER */
+        main {
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
 
-.contact-form input:focus,
-.contact-form textarea:focus{
-    outline:2px solid #22c55e;
-}
+        .contact-card {
+            background: var(--card-bg);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #1e293b;
+            text-align: center;
+        }
 
-/* BUTTON */
-.contact-form button{
-    padding:12px;
-    background:#22c55e;
-    border:none;
-    border-radius:8px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-}
+        h2 {
+            margin-top: 0;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.contact-form button:hover{
-    background:#16a34a;
-}
+        .contact-info {
+            margin-bottom: 30px;
+            font-size: 1rem;
+            color: #94a3b8;
+        }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:20px;
-    background:#020617;
-    margin-top:40px;
-}
+        .contact-info strong {
+            color: var(--primary-color);
+        }
 
-/* SOCIAL */
-.socials{
-    margin-top:10px;
-}
+        /* FORM */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-.socials a{
-    color:white;
-    margin:0 10px;
-    text-decoration:none;
-    font-size:14px;
-    transition:0.3s;
-}
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            background: var(--input-bg);
+            color: white;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
 
-.socials a:hover{
-    color:#22c55e;
-}
-</style>
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.2);
+        }
 
+        /* BUTTON */
+        .btn-submit {
+            padding: 15px;
+            background: var(--primary-color);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-submit:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            margin-top: 60px;
+            border-top: 1px solid #1e293b;
+        }
+
+        .socials {
+            margin-top: 20px;
+        }
+
+        .socials a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: var(--primary-color);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .contact-card {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<section class="contact-section">
-    <h2>Na Kontaktoni</h2>
+<header>
+    <div class="logo">Auto Sumea</div>
+    <nav>
+        <a href="index.html">Kryefaqja</a>
+        <a href="about.html">Rreth Nesh</a>
+        <a href="contact.html">Kontakt</a>
+    </nav>
+</header>
 
-    <div class="contact-info">
-        📞 Telefon: <strong>"+383 49 999 991"</strong><br>
-        📍 Auto Sumea, Kosovë
-    </div>
+<main>
+    <section class="contact-card">
+        <h2>Na Kontaktoni</h2>
 
-    <form class="contact-form">
-        <input type="text" placeholder="Emri juaj" required>
-        <input type="email" placeholder="Email" required>
-        <input type="text" placeholder="Subjekti">
-        <textarea rows="5" placeholder="Mesazhi juaj..." required></textarea>
-        <button type="submit">Dërgo Mesazhin</button>
-    </form>
-</section>
+        <div class="contact-info">
+            📞 Telefon: <strong>+383 49 999 991</strong><br>
+            📍 Auto Sumea, Kosovë
+        </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Emri juaj" required>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Subjekti">
+            <textarea rows="5" placeholder="Mesazhi juaj..." required></textarea>
+            <button type="submit" class="btn-submit">Dërgo Mesazhin</button>
+        </form>
+    </section>
+</main>
 
 <footer>
-    <p>&copy; 2026 Auto Sumea</p>
+    <p>&copy; 2026 Auto Sumea. Të gjitha të drejtat e rezervuara.</p>
 
     <div class="socials">
-        <a href="https://www.facebook.com/AutoSumeja/">Facebook</a>
+        <a href="https://www.facebook.com/AutoSumeja/" target="_blank">Facebook</a>
         <a href="#">Instagram</a>
         <a href="#">TikTok</a>
-        <a href="049 999 991">WhatsApp</a>
+        <a href="https://wa.me/38349999991" target="_blank">WhatsApp</a>
     </div>
 </footer>
 
