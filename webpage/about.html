@@ -1,159 +1,214 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rreth Nesh - Auto Sumea</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rreth Nesh | Auto Sallon Sumea</title>
 
-<link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #22c55e;
+            --bg-dark: #0f172a;
+            --card-bg: #020617;
+            --text-white: #ffffff;
+            --text-muted: #cbd5f5;
+        }
 
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.8;
+        }
 
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--card-bg);
+            border-bottom: 1px solid #1e293b;
+        }
 
-<style>body{
-    margin:0;
-    font-family:'Segoe UI', sans-serif;
-    background:#0f172a;
-    color:white;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
 
-/* HEADER */
-header{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 40px;
-    background:#020617;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-header a{
-    color:white;
-    text-decoration:none;
-    margin-left:15px;
-}
+        nav a:hover {
+            color: var(--primary-color);
+        }
 
-header a:hover{
-    color:#22c55e;
-}
+        /* ABOUT SECTION */
+        main {
+            padding: 40px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
-/* ABOUT SECTION */
-.about{
-    max-width:900px;
-    margin:50px auto;
-    padding:30px;
-    background:#020617;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.4);
-}
+        .about-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid #1e293b;
+            text-align: center;
+        }
 
-/* TITLE */
-.about h1{
-    text-align:center;
-    margin-bottom:20px;
-}
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
 
-/* TEXT */
-.about p{
-    line-height:1.8;
-    color:#cbd5f5;
-    margin-bottom:15px;
-}
+        .about-card p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
 
-/* HIGHLIGHT */
-.highlight{
-    color:#22c55e;
-    font-weight:bold;
-}
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
 
-/* FEATURES */
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-    margin-top:30px;
-}
+        /* FEATURES GRID */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
 
-.feature-box{
-    background:#0f172a;
-    padding:20px;
-    border-radius:12px;
-    text-align:center;
-    transition:0.3s;
-}
+        .feature-box {
+            background: var(--bg-dark);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s ease;
+            border: 1px solid #1e293b;
+        }
 
-.feature-box:hover{
-    transform:translateY(-5px);
-}
+        .feature-box:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.1);
+        }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:20px;
-    background:#020617;
-    margin-top:40px;
-}
+        .feature-box h3 {
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
 
-/* SOCIAL */
-.socials{
-    margin-top:10px;
-}
+        .feature-box p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
 
-.socials a{
-    color:white;
-    margin:0 10px;
-    text-decoration:none;
-    transition:0.3s;
-}
+        .icon {
+            font-size: 2.5rem;
+        }
 
-.socials a:hover{
-    color:#22c55e;
-}</style>
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            margin-top: 60px;
+            border-top: 1px solid #1e293b;
+        }
 
+        .socials {
+            margin-top: 20px;
+        }
+
+        .socials a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: var(--primary-color);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-    <div><strong>Auto Sumea</strong></div>
-    <div>
+    <div class="logo">Auto Sumea</div>
+    <nav>
         <a href="index.html">Kryefaqja</a>
-        <a href="about>html">Rreth Nesh</a>
+        <a href="about.html">Rreth Nesh</a>
         <a href="contact.html">Kontakt</a>
-    </div>
+    </nav>
 </header>
 
-<section class="about">
-    <h1>Rreth Nesh</h1>
+<main>
+    <article class="about-card">
+        <h1>Rreth Nesh</h1>
 
-    <p><span class="highlight">Auto Sumea</span> është një autosallon modern në Kosovë që ofron makina cilësore dhe të sigurta.</p>
+        <p><span class="highlight">Auto Sumea</span> është një autosallon modern në Kosovë që ofron makina cilësore dhe të sigurta.</p>
+        <p>Ne sigurohemi që çdo automjet të jetë i kontrolluar me kujdes dhe gati për rrugë, duke ofruar transparencë të plotë për çdo blerës.</p>
+        <p>Gama jonë përfshin makina ekonomike për qytet, makina familjare komode dhe modele luksoze për ata që kërkojnë performancë.</p>
+        <p>Ekipi ynë profesional është këtu për t'ju ndihmuar të bëni zgjedhjen më të mirë, duke garantuar një proces blerjeje të thjeshtë dhe të sigurt.</p>
 
-    <p>Ne sigurohemi që çdo automjet të jetë i kontrolluar dhe gati për përdorim.</p>
+        <div class="features">
+            <div class="feature-box">
+                <div class="icon">🚗</div>
+                <h3>Cilësi e Garantuar</h3>
+                <p>Çdo makinë i nënshtrohet një kontrolli teknik rigoroz para shitjes.</p>
+            </div>
 
-    <p>Ofrojmë makina ekonomike, familjare dhe luksoze për çdo klient.</p>
+            <div class="feature-box">
+                <div class="icon">💰</div>
+                <h3>Çmime Konkurruese</h3>
+                <p>Ofertat më të mira në treg për të gjitha kategoritë e buxhetit.</p>
+            </div>
 
-    <p>Ekipi ynë ju ndihmon të bëni zgjedhjen e duhur me besim dhe transparencë.</p>
-
-    <div class="features">
-        <div class="feature-box">
-            🚗 <h3>Cilësi e Garantuar</h3>
-            <p>Makina të kontrolluara dhe të sigurta.</p>
+            <div class="feature-box">
+                <div class="icon">🤝</div>
+                <h3>Besueshmëri</h3>
+                <p>Marrëdhënie korrekte dhe mbështetje profesionale pas blerjes.</p>
+            </div>
         </div>
-
-        <div class="feature-box">
-            💰 <h3>Çmime Konkurruese</h3>
-            <p>Oferta për çdo buxhet.</p>
-        </div>
-
-        <div class="feature-box">
-            🤝 <h3>Besim</h3>
-            <p>Shërbim korrekt dhe profesional.</p>
-        </div>
-    </div>
-</section>
+    </article>
+</main>
 
 <footer>
-    <p>&copy; 2026 Auto Sumea</p>
+    <p>&copy; 2026 Auto Sumea. Të gjitha të drejtat e rezervuara.</p>
 
     <div class="socials">
-        <a href="#">Facebook</a>
+        <a href="https://www.facebook.com/AutoSumeja/" target="_blank">Facebook</a>
         <a href="#">Instagram</a>
         <a href="#">TikTok</a>
     </div>

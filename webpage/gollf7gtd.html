@@ -1,244 +1,337 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VW Golf 7 GTD - Auto Sumea</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VW Golf 7 GTD | Auto Sumea</title>
 
-<style>
-body{
-	margin:0;
-	font-family:'Segoe UI', sans-serif;
-	background:#0f172a;
-	color:white;
-}
+    <style>
+        :root {
+            --primary-color: #22c55e;
+            --bg-dark: #0f172a;
+            --card-bg: #020617;
+            --text-white: #ffffff;
+            --text-muted: #94a3b8;
+        }
 
-/* HEADER */
-header{
-	display:flex;
-	justify-content:space-between;
-	padding:20px 40px;
-	background:#020617;
-	position:sticky;
-	top:0;
-	z-index:1000;
-}
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-header a{
-	color:white;
-	text-decoration:none;
-	margin:0 10px;
-}
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--card-bg);
+            border-bottom: 1px solid #1e293b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-header a:hover{
-	color:#22c55e;
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
 
-/* HERO */
-.hero{
-	height:70vh;
-	background:url("imagesgollf7gtd/gtd.jpg") center/cover no-repeat;
-	display:flex;
-	align-items:flex-end;
-	padding:40px;
-	position:relative;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
 
-.hero::after{
-	content:"";
-	position:absolute;
-	inset:0;
-	background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-}
+        nav a:hover {
+            color: var(--primary-color);
+        }
 
-.hero-content{
-	position:relative;
-	z-index:1;
-}
+        /* HERO SECTION - E PERMIRËSUAR */
+        .hero {
+            height: 75vh;
+            position: relative;
+            background: url("imgollf7gtd/gtd.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center; 
+            padding: 0 5%;
+            overflow: hidden;
+        }
 
-.hero h1{
-	font-size:40px;
-	margin:0;
-}
+        .hero::before {
+            content:"imgollf7gtd/1.jpg";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(2, 6, 23, 0.95) 0%, rgba(2, 6, 23, 0.4) 50%, transparent 100%);
+            z-index: 1;
+        }
 
-.price{
-	font-size:28px;
-	color:#22c55e;
-	margin-top:10px;
-}
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            animation: fadeInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
 
-/* CONTAINER */
-.container{
-	max-width:1100px;
-	margin:30px auto;
-	padding:20px;
-}
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin: 0 0 15px 0;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
 
-/* GALLERY */
-.gallery{
-	display:grid;
-	grid-template-columns:repeat(4,1fr);
-	gap:10px;
-}
+        .hero-content .price {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            display: inline-block;
+            padding: 5px 0;
+            border-bottom: 3px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
 
-.gallery img{
-	width:100%;
-	height:120px;
-	object-fit:cover;
-	border-radius:10px;
-	cursor:pointer;
-	transition:0.3s;
-}
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 480px;
+            margin-top: 10px;
+            border-left: 3px solid #1e293b;
+            padding-left: 20px;
+        }
 
-.gallery img:hover{
-	transform:scale(1.05);
-}
+        /* MAIN CONTENT */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 5%;
+        }
 
-/* DETAILS */
-.details{
-	display:grid;
-	grid-template-columns:1fr 1fr;
-	gap:20px;
-	margin-top:20px;
-}
+        /* GALLERY */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 50px;
+        }
 
-.card{
-	background:#020617;
-	padding:20px;
-	border-radius:12px;
-}
+        .gallery img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.4s ease;
+            border: 1px solid #1e293b;
+        }
 
-.card h3{
-	color:#22c55e;
-}
+        .gallery img:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 20px rgba(34, 197, 94, 0.2);
+        }
 
-table{
-	width:100%;
-	border-collapse:collapse;
-}
+        /* DETAILS GRID */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
 
-td{
-	padding:10px;
-	border-bottom:1px solid #1e293b;
-}
+        .info-card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
 
-/* LIGHTBOX */
-.lightbox{
-	position:fixed;
-	inset:0;
-	background:rgba(0,0,0,0.9);
-	display:none;
-	align-items:center;
-	justify-content:center;
-	z-index:2000;
-}
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
 
-.lightbox img{
-	max-width:90%;
-	max-height:90%;
-	border-radius:10px;
-}
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
 
-/* BUTTON */
-.sticky-btn{
-	position:fixed;
-	bottom:20px;
-	left:50%;
-	transform:translateX(-50%);
-	background:#22c55e;
-	color:black;
-	padding:15px 30px;
-	border-radius:50px;
-	font-weight:bold;
-	text-decoration:none;
-}
+        td {
+            padding: 15px 0;
+            border-bottom: 1px solid #1e293b;
+        }
 
-.sticky-btn:hover{
-	background:#16a34a;
-}
+        td:first-child {
+            color: var(--text-muted);
+        }
 
-/* FOOTER RESPONSIVE */
-@media(max-width:768px){
-	.gallery{
-		grid-template-columns:repeat(2,1fr);
-	}
+        td:last-child {
+            text-align: right;
+            font-weight: bold;
+            color: var(--text-white);
+        }
 
-	.details{
-		grid-template-columns:1fr;
-	}
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            cursor: zoom-out;
+        }
 
-	.hero h1{
-		font-size:28px;
-	}
-}
-</style>
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* STICKY CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-color);
+            color: #000;
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.4);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sticky-cta:hover {
+            background: #16a34a;
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 60px 20px 120px 20px;
+            background: var(--card-bg);
+            border-top: 1px solid #1e293b;
+        }
+
+        /* ANIMATION */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+            .hero { height: 65vh; align-items: flex-end; padding-bottom: 60px; }
+            .hero::before { background: linear-gradient(to top, rgba(2, 6, 23, 1) 30%, transparent 100%); }
+            .hero-content h1 { font-size: 2.2rem; }
+            .details-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-	<div><strong>Auto Sumea</strong></div>
-	<div>
-		<a href="index.html">Kryefaqja</a>
-		<a href="about.html">Rreth Nesh</a>
-		<a href="contact.html">Kontakt</a>
-	</div>
+    <div class="logo">Auto Sumea</div>
+    <nav>
+        <a href="index.html">Kryefaqja</a>
+        <a href="about.html">Rreth Nesh</a>
+        <a href="contact.html">Kontakt</a>
+    </nav>
 </header>
 
-<div class="hero">
-	<div class="hero-content">
-		<h1>Volkswagen Golf 7 GTD</h1>
-		<div class="price">17,500 €</div>
-	</div>
-</div>
+<section class="hero">
+    <div class="hero-content">
+        <h1>VW Golf 7 <br> <span style="color: var(--primary-color)">GTD Edition</span></h1>
+        <div class="price">17,500 €</div>
+        <p class="hero-description">
+            Fuqia e vërtetë e naftës takon dizajnin sportiv. Një makinë që ofron 184 kuaj fuqi dhe komoditetin e një hatchback-u premium.
+        </p>
+    </div>
+</section>
 
-<div class="container">
+<main>
+    <!-- GALERIA -->
+    <div class="gallery">
+        <img src="imgollf7gtd/1.jpg" alt="Pamja 1" onclick="openImg(this)">
+        <img src="imgollf7gtd/2.jpg" alt="Pamja 2" onclick="openImg(this)">
+        <img src="imgollf7gtd/3.jpg" alt="Pamja 3" onclick="openImg(this)">
+        <img src="imgollf7gtd/4.jpg" alt="Pamja 4" onclick="openImg(this)">
+    </div>
 
-	<div class="gallery">
-		<img src="imagesgollf7gtd/1.jpg" onclick="openImg(this)">
-		<img src="imagesgollf7gtd/2.jpg" onclick="openImg(this)">
-		<img src="imagesgollf7gtd/3.jpg" onclick="openImg(this)">
-		<img src="imagesgollf7gtd/4.jpg" onclick="openImg(this)">
-	</div>
+    <!-- DETAJET -->
+    <div class="details-grid">
+        <div class="info-card">
+            <h3>Specifikat Teknike</h3>
+            <table>
+                <tr><td>Viti i Prodhimit</td><td>2015</td></tr>
+                <tr><td>Motori</td><td>2.0 Diesel</td></tr>
+                <tr><td>Transmisioni</td><td>Automatik (DSG)</td></tr>
+                <tr><td>Fuqia</td><td>184 PS</td></tr>
+                <tr><td>Karburanti</td><td>Diesel</td></tr>
+                <tr><td>Statusi</td><td>I doganuar</td></tr>
+            </table>
+        </div>
 
-	<div class="details">
+        <div class="info-card">
+            <h3>Përshkrimi i Makines</h3>
+            <p>Volkswagen Golf 7 GTD në gjendje të shkëlqyer teknike. Ky model njihet për balancën perfekte mes performancës sportive dhe konsumit të ulët.</p>
+            <p>Makina posedon: Ulëse sportive GTD, drita LED bi-xenon, timon multifunksional, sensorë parkimi dhe navigacion origjinal të VW.</p>
+            <p style="color: var(--primary-color); font-weight: bold;">E gatshme për çdo kontroll teknik!</p>
+        </div>
+    </div>
+</main>
 
-		<div class="card">
-			<h3>Specifika</h3>
-			<table>
-				<tr><td>Viti</td><td>2015</td></tr>
-				<tr><td>Motori</td><td>2.0 Diesel</td></tr>
-				<tr><td>Transmisioni</td><td>Automatik</td></tr>
-				<tr><td>Fuqia</td><td>184 PS</td></tr>
-			</table>
-		</div>
-
-		<div class="card">
-			<h3>Përshkrimi</h3>
-			<p>
-			Makinë shumë e ruajtur, pa aksidente, e servisuar rregullisht.
-			Gati për përdorim dhe në gjendje shumë të mirë.
-			</p>
-		</div>
-
-	</div>
-</div>
-
+<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeImg()">
-	<img id="lightImg">
+    <img id="lightImg" src="" alt="Full view">
 </div>
 
-<a href="contact.html" class="sticky-btn">Kontakto Tani</a>
+<!-- STICKY BUTTON -->
+<a href="contact.html" class="sticky-cta">Kontakto Tani</a>
+
+<footer>
+    <p>&copy; 2026 Auto Sumea. Të gjitha të drejtat e rezervuara.</p>
+</footer>
 
 <script>
-function openImg(img){
-	document.getElementById("lightImg").src = img.src;
-	document.getElementById("lightbox").style.display = "flex";
-}
+    function openImg(img) {
+        const lightbox = document.getElementById("lightbox");
+        const lightImg = document.getElementById("lightImg");
+        lightImg.src = img.src;
+        lightbox.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    }
 
-function closeImg(){
-	document.getElementById("lightbox").style.display = "none";
-}
+    function closeImg() {
+        document.getElementById("lightbox").style.display = "none";
+        document.body.style.overflow = "auto";
+    }
 </script>
 
 </body>
