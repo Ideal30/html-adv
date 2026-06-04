@@ -1,0 +1,20 @@
+nav{
+	background: darkblue;
+	color: white;
+}
+nav ul li a:hover{
+	color: white;
+}
+
+form{
+	background: darkblue;
+	color: white;
+	margin-right: 25%;
+	margin-left: 25%;
+}
+input:focus{
+	background: yellow;
+}
+input:hover{
+	color: green;
+}
